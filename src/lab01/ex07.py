@@ -10,12 +10,12 @@ for i in stroka:
         out += i
         k += 1
         start = cs
-for i in range(len(stroka) - 1):
+for i in range(start + 1, len(stroka) - 1):
     if stroka[i] in '0123456789':
         out += stroka[i + 1]
         fin = i
         break
-step = (fin + 1) - (start - 1)
+step = (fin + 1) - (start-1)
 for n in range(fin + 1 + step, len(stroka), step):
     out += stroka[n]
     if stroka[n] == '.':
