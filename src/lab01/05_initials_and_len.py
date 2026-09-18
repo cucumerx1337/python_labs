@@ -8,5 +8,5 @@ for i in range(len(fio)-1):
         k+=1
 if k==2:
     inic = fio[0]+inic
+print(f"Инициалы: {inic}.")
 print(f"Длина (символов): {lenf}")
-print(f"Инициалы: {inic}")
