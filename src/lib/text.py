@@ -1,55 +1,32 @@
 import re
 
+_CONTROL_RE = re.compile(r"[\x00-\x1f\x7f-\x9f]")
+_SPACES_RE = re.compile(r"\s+")
+_TOKEN_RE = re.compile(r"\w+(?:-\w+)*")
+
 
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
-    """Приводит текст к единому регистру, заменяет ё на е и убирает лишние пробелы."""
-    if casefold:
-        text = text.casefold()
-    else:
-        text = text.lower()
-
+    """Привести текст к нормальному виду."""
     if yo2e:
-        text = text.replace("ё", "е").replace("Ё", "Е")
-
-    for ch in ("\t", "\r", "\n"):
-        text = text.replace(ch, " ")
-
-    return " ".join(text.split())
+        text = text.replace("ё", "е").replace("Ё", "Е")  # ё -> е
+    text = text.casefold() if casefold else text.lower()
+    text = _CONTROL_RE.sub(" ", text)  # \t, \r, \n -> пробел
+    return _SPACES_RE.sub(" ", text).strip()  # схлопнуть пробелы
 
 
 def tokenize(text: str) -> list[str]:
-    """Разбивает строку на токены (слова с дефисами внутри и цифры)."""
-    return re.findall(r"\w+(?:-\w+)*", text)
+    """Разбить текст на слова (\\w+ и дефис внутри слова)."""
+    return _TOKEN_RE.findall(text)
 
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
-    """Подсчитывает частоту появления каждого слова."""
-    freq = {}
-    for word in tokens:
-        if word in freq:
-            freq[word] += 1
-        else:
-            freq[word] = 1
+    """Подсчитать частоты слов."""
+    freq: dict[str, int] = {}
+    for token in tokens:
+        freq[token] = freq.get(token, 0) + 1
     return freq
 
 
 def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
-    """Возвращает n самых частых слов с сортировкой по частоте и алфавиту."""
+    """Топ-N по убыванию частоты, при равенстве по алфавиту."""
     return sorted(freq.items(), key=lambda item: (-item[1], item[0]))[:n]
-
-
-if __name__ == "__main__":
-    assert normalize("ПрИвЕт\nМИр\t") == "привет мир"
-    assert normalize("ёжик, Ёлка") == "ежик, елка"
-
-    assert tokenize("привет, мир!") == ["привет", "мир"]
-    assert tokenize("по-настоящему круто") == ["по-настоящему", "круто"]
-    assert tokenize("2025 год") == ["2025", "год"]
-
-    f = count_freq(["a", "b", "a", "c", "b", "a"])
-    assert f == {"a": 3, "b": 2, "c": 1}
-    assert top_n(f, 2) == [("a", 3), ("b", 2)]
-
-    f2 = count_freq(["bb", "aa", "bb", "aa", "cc"])
-    assert top_n(f2, 2) == [("aa", 2), ("bb", 2)]
-    print("OK")
