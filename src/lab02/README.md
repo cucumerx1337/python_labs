@@ -26,6 +26,7 @@ def find_min_max(values):
 print(find_min_max([3, -1, 5, 5, 0]))  # (-1, 5)
 print(find_min_max([42]))  # (42, 42)
 ```
+![alt text](../../images/lab02/image.png)
 
 ### get_unique_sorted()
 
@@ -55,6 +56,7 @@ def get_unique_sorted(items):
 print(get_unique_sorted([3, 1, 2, 1, 3]))  # [1, 2, 3]
 print(get_unique_sorted([]))  # []
 ```
+![alt text](../../images/lab02/image-1.png)
 
 ### merge_elements()
 
@@ -73,8 +75,7 @@ def merge_elements(matrix):
 
 print(merge_elements([[1, 2], (3, 4, 5)]))  # [1, 2, 3, 4, 5]
 ```
-
-![Вывод exA](images/lab02/exA.png)
+![alt text](../../images/lab02/image-2.png)
 
 ### transpose()
 
@@ -105,6 +106,7 @@ print(transpose([[1], [2], [3]]))  # [[1, 2, 3]]
 print(transpose([[1, 2], [3, 4]]))  # [[1, 3], [2, 4]]
 print(transpose([]))  # []
 ```
+![alt text](../../images/lab02/image-3.png)
 
 ### row_sums()
 
@@ -130,6 +132,7 @@ print(row_sums([[1, 2, 3], [4, 5, 6]]))  # [6, 15]
 print(row_sums([[-1, 1], [10, -10]]))  # [0, 0]
 print(row_sums([[0, 0], [0, 0]]))  # [0, 0]
 ```
+![alt text](../../images/lab02/image-4.png)
 
 ### col_sums()
 
@@ -160,7 +163,7 @@ print(col_sums([[-1, 1], [10, -10]]))  # [9, -9]
 print(col_sums([[0, 0], [0, 0]]))  # [0, 0]
 ```
 
-![Вывод exG](images/lab02/exG.png)
+![alt text](../../images/lab02/image-5.png)
 
 ## Задание B - кортежи
 
@@ -227,5 +230,4 @@ print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
 # Сидорова А.С., гр. ABB-01, GPA 4.00
 ```
-
-![Вывод exR](images/lab02/exR.png)
+![alt text](../../images/lab02/exR.png)
