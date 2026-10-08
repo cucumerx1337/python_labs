@@ -5,7 +5,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from lib.text import count_freq, normalize, tokenize, top_n
 
-USE_TABLE_VIEW = False
+USE_TABLE_VIEW = True  # Включаем отображение таблицы
 
 
 def main():

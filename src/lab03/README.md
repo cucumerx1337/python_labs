@@ -55,31 +55,9 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
 
 ### Мини-тесты
 
-```python
-# normalize
-assert normalize("ПрИвЕт\nМИр\t") == "привет мир"
-assert normalize("ёжик, Ёлка") == "ежик, елка"
-assert normalize("Hello\r\nWorld") == "hello world"
-assert normalize("  двойные   пробелы  ") == "двойные пробелы"
+![alt text](../../images/lab03/mini_tests.png)
 
-# tokenize
-assert tokenize("привет мир") == ["привет", "мир"]
-assert tokenize("hello,world!!!") == ["hello", "world"]
-assert tokenize("по-настоящему круто") == ["по-настоящему", "круто"]
-assert tokenize("2025 год") == ["2025", "год"]
-assert tokenize("emoji 😀 не слово") == ["emoji", "не", "слово"]
-
-# count_freq + top_n
-freq = count_freq(["a", "b", "a", "c", "b", "a"])
-assert freq == {"a": 3, "b": 2, "c": 1}
-assert top_n(freq, 2) == [("a", 3), ("b", 2)]
-
-# тай-брейк по слову при равной частоте
-freq2 = count_freq(["bb", "aa", "bb", "aa", "cc"])
-assert top_n(freq2, 2) == [("aa", 2), ("bb", 2)]
-```
-
-![Мини-тесты](images/lab03/mini-test.png)
+![alt text](../../images/lab03/result.png)
 
 ## Задание B - text_stats
 
@@ -130,33 +108,9 @@ if __name__ == "__main__":
 
 ### Примеры
 
-Обычный режим (`USE_TABLE_VIEW = False`):
+![alt text](../../images/lab03/try.png)
 
-```
-$ echo "Привет, мир! Привет!!!" | python src/lab03/text_stats.py
-Всего слов: 3
-Уникальных слов: 2
-Топ-5:
-привет:2
-мир:1
-```
-
-Табличный режим (`USE_TABLE_VIEW = True`):
-
-```
-$ echo "Привет, мир! Привет!!!" | python src/lab03/text_stats.py
-Всего слов: 3
-Уникальных слов: 2
-Топ-5:
-слово  | частота
-----------------
-привет | 2
-мир    | 1
-```
-
-![Обычный вывод](images/lab03/text_stats.png)
-![Табличный вывод](images/lab03/text_stats_table.png)
-
+![alt text](../../images/lab03/table_look.png)
 ## Как запустить
 
 ### Вручную, с клавиатуры
