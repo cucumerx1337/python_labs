@@ -74,7 +74,7 @@ def merge_elements(matrix):
 print(merge_elements([[1, 2], (3, 4, 5)]))  # [1, 2, 3, 4, 5]
 ```
 
-![Вывод exA](img/lab02/exA.png)
+![Вывод exA](images/lab02/exA.png)
 
 ### transpose()
 
@@ -100,10 +100,10 @@ def transpose(mat):
     return result
 
 
-print(transpose([[1, 2, 3]]))       # [[1], [2], [3]]
-print(transpose([[1], [2], [3]]))   # [[1, 2, 3]]
+print(transpose([[1, 2, 3]]))  # [[1], [2], [3]]
+print(transpose([[1], [2], [3]]))  # [[1, 2, 3]]
 print(transpose([[1, 2], [3, 4]]))  # [[1, 3], [2, 4]]
-print(transpose([]))                # []
+print(transpose([]))  # []
 ```
 
 ### row_sums()
@@ -126,9 +126,9 @@ def row_sums(mat):
     return result
 
 
-print(row_sums([[1, 2, 3], [4, 5, 6]]))    # [6, 15]
-print(row_sums([[-1, 1], [10, -10]]))      # [0, 0]
-print(row_sums([[0, 0], [0, 0]]))          # [0, 0]
+print(row_sums([[1, 2, 3], [4, 5, 6]]))  # [6, 15]
+print(row_sums([[-1, 1], [10, -10]]))  # [0, 0]
+print(row_sums([[0, 0], [0, 0]]))  # [0, 0]
 ```
 
 ### col_sums()
@@ -155,12 +155,12 @@ def col_sums(mat):
     return result
 
 
-print(col_sums([[1, 2, 3], [4, 5, 6]]))    # [5, 7, 9]
-print(col_sums([[-1, 1], [10, -10]]))      # [9, -9]
-print(col_sums([[0, 0], [0, 0]]))          # [0, 0]
+print(col_sums([[1, 2, 3], [4, 5, 6]]))  # [5, 7, 9]
+print(col_sums([[-1, 1], [10, -10]]))  # [9, -9]
+print(col_sums([[0, 0], [0, 0]]))  # [0, 0]
 ```
 
-![Вывод exG](img/lab02/exG.png)
+![Вывод exG](images/lab02/exG.png)
 
 ## Задание B - кортежи
 
@@ -228,16 +228,4 @@ print(format_record(("  сидорова  анна   сергеевна ", "ABB-
 # Сидорова А.С., гр. ABB-01, GPA 4.00
 ```
 
-![Вывод exR](img/lab02/exR.png)
-
-## Как запустить
-
-В терминале из корня репозитория (укажи путь к своему файлу):
-
-```bash
-python src/lab02/exA.py
-python src/lab02/exG.py
-python src/lab02/exR.py
-```
-
-Скрипты выводят результаты тестовых вызовов `print(...)`. Если нужно проверить обработку ошибок, вызови функцию с некорректными данными, например `find_min_max([])` или `transpose([[1, 2], [3]])`, и убедись, что выбрасывается нужное исключение.
+![Вывод exR](images/lab02/exR.png)

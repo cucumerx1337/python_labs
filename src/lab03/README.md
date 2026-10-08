@@ -79,7 +79,7 @@ freq2 = count_freq(["bb", "aa", "bb", "aa", "cc"])
 assert top_n(freq2, 2) == [("aa", 2), ("bb", 2)]
 ```
 
-![Мини-тесты](img/lab03/mini-test.png)
+![Мини-тесты](images/lab03/mini-test.png)
 
 ## Задание B - text_stats
 
@@ -154,8 +154,8 @@ $ echo "Привет, мир! Привет!!!" | python src/lab03/text_stats.py
 мир    | 1
 ```
 
-![Обычный вывод](img/lab03/text_stats.png)
-![Табличный вывод](img/lab03/text_stats_table.png)
+![Обычный вывод](images/lab03/text_stats.png)
+![Табличный вывод](images/lab03/text_stats_table.png)
 
 ## Как запустить
 
