@@ -1,30 +1,30 @@
-def min_max(nums):
-    if len(nums) == 0:
-        raise ValueError("пустой список")
+def find_min_max(values):
+    if not values:
+        raise ValueError("empty list")
 
-    minimum = nums[0]
-    maximum = nums[0]
-
-    for x in nums:
-        if x < minimum:
-            minimum = x
-        if x > maximum:
-            maximum = x
-    return (minimum, maximum)
-
-print(min_max([3, -1, 5, 5, 0]))      # (-1, 5)
-print(min_max([42]))                   # (42, 42)
+    low = values[0]
+    high = values[0]
+    for num in values:
+        if num < low:
+            low = num
+        if num > high:
+            high = num
+    return (low, high)
 
 
-def unique_sorted(nums):
+print(find_min_max([3, -1, 5, 5, 0]))  # (-1, 5)
+print(find_min_max([42]))  # (42, 42)
+
+
+def get_unique_sorted(items):
     unique = []
-    for x in nums:
+    for item in items:
         found = False
         for u in unique:
-            if u == x:
+            if u == item:
                 found = True
-        if found == False:
-            unique.append(x)
+        if not found:
+            unique.append(item)
 
     n = len(unique)
     for i in range(n):
@@ -35,17 +35,19 @@ def unique_sorted(nums):
                 unique[j + 1] = temp
     return unique
 
-print(unique_sorted([3, 1, 2, 1, 3])) # [1, 2, 3]
-print(unique_sorted([]))               # []
 
-def flatten(mat):
+print(get_unique_sorted([3, 1, 2, 1, 3]))  # [1, 2, 3]
+print(get_unique_sorted([]))  # []
+
+
+def merge_elements(matrix):
     result = []
-    for row in mat:
-        if type(row) != list and type(row) != tuple:
-            raise TypeError("это не список или не кортеж")
-        for item in row:
-            result.append(item)
+    for row in matrix:
+        if not isinstance(row, (list, tuple)):
+            raise TypeError("not a list or tuple")
+        for element in row:
+            result.append(element)
     return result
 
 
-print(flatten([[1, 2], (3, 4, 5)]))   # [1, 2, 3, 4, 5]
+print(merge_elements([[1, 2], (3, 4, 5)]))  # [1, 2, 3, 4, 5]

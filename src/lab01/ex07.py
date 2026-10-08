@@ -21,6 +21,3 @@ for n in range(fin + 1 + step, len(stroka), step):
     if stroka[n] == '.':
         break
 print(out)
-
-
-    

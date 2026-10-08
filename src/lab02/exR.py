@@ -33,6 +33,8 @@ def format_record(rec):
         head = fam + " " + name_letter + "."
 
     return head + ", гр. " + group + ", GPA " + "{:.2f}".format(gpa)
+
+
 print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 # Иванов И.И., гр. BIVT-25, GPA 4.60
 
