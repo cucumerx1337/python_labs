@@ -1,2 +1,38 @@
-*.pyc
+# Байткод и кэши Python
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Виртуальные окружения
+.venv/
+venv/
+ENV/
+env/
+
+# Системные файлы macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Настройки IDE и редакторов
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Кэши тестирования и анализаторов
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Чекпоинты Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Переменные окружения и секреты
+.env
+.env.*
+!.env.example
